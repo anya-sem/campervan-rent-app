@@ -1,7 +1,9 @@
+import css from './SearchBtn.module.css'
+
 export const SearchBtn = () => {
   return (
     <>
-      <button>Search</button>
+      <button className={css.button} type="submit">Search</button>
     </>
   );
 };

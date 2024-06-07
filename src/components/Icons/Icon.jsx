@@ -10,7 +10,7 @@ export const Icon = ({
   return (
     <>
       <svg
-        // className={`icon icon-${name} ${className}`}
+        className={className}
         width={width}
         height={height}
         fill={fill}
