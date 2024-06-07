@@ -7,6 +7,8 @@
   --color-yellow: #ffc531;
   --color-lightgray: #f2f4f7;
   --color-white: #f7f7f7;
+
+  --transition: 0.3s ease;
 }
 
 @font-face {

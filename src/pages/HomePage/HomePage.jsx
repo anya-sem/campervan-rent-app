@@ -7,7 +7,7 @@ export default function HomePage() {
       <Helmet>
         <title>Home</title>
       </Helmet>
-      <h1>Hello</h1>
+      <h1>Home page</h1>
     </Container>
   );
 }

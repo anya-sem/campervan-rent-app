@@ -15,6 +15,7 @@ export function App() {
         <Route path="/" element={<HomePage />} />
         <Route path="/catalog" element={<CatalogPage />} />
         <Route path="/favorites" element={<FavoritesPage />} />
+        <Route path="*" element={<HomePage />} />
       </Routes>
     </Suspense>
   );

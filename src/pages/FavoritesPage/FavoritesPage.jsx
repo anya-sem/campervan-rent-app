@@ -7,6 +7,7 @@ export default function FavoritesPage() {
       <Helmet>
         <title>Favorites</title>
       </Helmet>
+      <h1>Favorites</h1>
     </Container>
   );
 }
