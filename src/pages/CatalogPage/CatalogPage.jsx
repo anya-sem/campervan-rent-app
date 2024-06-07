@@ -1,5 +1,6 @@
 import { Helmet } from 'react-helmet-async';
 import { Container } from '../../components/Container/Container';
+import { FiltersSection } from '../../components/FiltersSection/FiltersSection';
 import { CarList } from '../../components/CarList/CarList';
 
 export default function CatalogPage() {
@@ -8,7 +9,7 @@ export default function CatalogPage() {
       <Helmet>
         <title>Catalog</title>
       </Helmet>
-      <h1>Catalog</h1>
+      <FiltersSection />
       <CarList />
     </Container>
   );

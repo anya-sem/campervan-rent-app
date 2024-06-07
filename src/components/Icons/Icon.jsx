@@ -1,4 +1,12 @@
-export const Icon = ({ name, width, height, fill, stroke, className }) => {
+export const Icon = ({
+  name,
+  width,
+  height,
+  fill,
+  stroke,
+  strokeWidth,
+  className,
+}) => {
   return (
     <>
       <svg
@@ -6,10 +14,13 @@ export const Icon = ({ name, width, height, fill, stroke, className }) => {
         width={width}
         height={height}
         fill={fill}
-        stroke={stroke}
         aria-hidden="true"
       >
-        <use href={`../../../public/sprite.svg#icon-${name}`} />
+        <use
+          href={`/sprite.svg#icon-${name}`}
+          stroke={stroke}
+          strokeWidth={strokeWidth}
+        />
       </svg>
     </>
   );
