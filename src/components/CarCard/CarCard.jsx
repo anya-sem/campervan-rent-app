@@ -2,20 +2,40 @@ import { Icon } from '../Icons/Icon';
 
 export const CarCard = () => {
   return (
-    <>
+    <div>
       <img src="" alt="" />
       <h2>name</h2>
-      <p>price</p>
-      <Icon
-        name="heart"
-        fill="none"
-        stroke="currentColor"
-        width="24"
-        height="24"
-      />
       <div>
-        <p>rating(reviews)</p>
-        <p>location</p>
+        <p>price</p>
+        <Icon
+          name="heart"
+          fill="none"
+          stroke="currentColor"
+          width="24"
+          height="24"
+        />
+      </div>
+      <div>
+        <div>
+          <Icon
+            name="star"
+            fill="none"
+            stroke="currentColor"
+            width="16"
+            height="16"
+          />
+          <p>rating(reviews)</p>
+        </div>
+        <div>
+          <Icon
+            name="pin"
+            fill="none"
+            stroke="currentColor"
+            width="16"
+            height="16"
+          />
+          <p>location</p>
+        </div>
       </div>
       <p>description</p>
       <div>
@@ -38,6 +58,7 @@ export const CarCard = () => {
           <p>details.airConditioner</p>
         </div>
       </div>
-    </>
+      <button type="button">Show more</button>
+    </div>
   );
 };
