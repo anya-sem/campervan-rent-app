@@ -7,6 +7,10 @@ export const Icon = ({
   strokeWidth,
   className,
 }) => {
+  const path =
+    import.meta.env.MODE === 'production'
+      ? `${import.meta.env.BASE_URL}/`
+      : '/';
   return (
     <>
       <svg
@@ -17,7 +21,7 @@ export const Icon = ({
         aria-hidden="true"
       >
         <use
-          href={`/sprite.svg#icon-${name}`}
+          xlinkHref={`${path}sprite.svg#icon-${name}`}
           stroke={stroke}
           strokeWidth={strokeWidth}
         />
