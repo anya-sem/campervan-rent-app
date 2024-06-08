@@ -1,0 +1,1 @@
+import{j as e,C as r,H as s}from"./index-96657d6e.js";function i(){return e.jsxs(r,{children:[e.jsx(s,{children:e.jsx("title",{children:"Favorites"})}),e.jsx("h1",{children:"Favorites"})]})}export{i as default};
