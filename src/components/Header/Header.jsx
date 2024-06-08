@@ -2,6 +2,7 @@ import clsx from 'clsx';
 import { NavLink } from 'react-router-dom';
 import { Container } from '../Container/Container';
 import { Icon } from '../Icons/Icon';
+import { SeeCatalogBtn } from '../../components/SeeCatalogBtn/SeeCatalogBtn';
 import css from './Header.module.css';
 
 const buildLinkClass = ({ isActive }) => {
@@ -19,9 +20,7 @@ export const Header = () => {
             </NavLink>
             <ul className={css.buttons}>
               <li>
-                <NavLink to="/catalog" className={css.catalogBtn} href="">
-                  See catalog
-                </NavLink>
+                <SeeCatalogBtn />
               </li>
               <li>
                 <NavLink to="/favorites" className={buildLinkClass} href="">

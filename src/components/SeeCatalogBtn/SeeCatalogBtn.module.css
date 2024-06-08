@@ -1,0 +1,15 @@
+.button {
+  padding: 16px 40px;
+  background-color: var(--color-red);
+  border-radius: 200px;
+  transition: var(--transition);
+
+  color: var(--color-white);
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.5;
+  letter-spacing: -0.08px;
+}
+.button:hover {
+  background: var(--color-darkred);
+}

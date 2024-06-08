@@ -1,5 +1,6 @@
 import { Helmet } from 'react-helmet-async';
 import { Container } from '../../components/Container/Container';
+import { HomeSection } from '../../components/HomeSection/HomeSection';
 
 export default function HomePage() {
   return (
@@ -7,7 +8,7 @@ export default function HomePage() {
       <Helmet>
         <title>Home</title>
       </Helmet>
-      <h1>Home page</h1>
+      <HomeSection />
     </Container>
   );
 }
