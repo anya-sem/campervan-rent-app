@@ -14,7 +14,7 @@ export const Filters = () => {
             <Icon
               className="icon"
               name="air"
-              stroke="currentColor"
+              stroke="#101828"
               strokeWidth="0.05"
               width="32"
               height="32"
@@ -80,8 +80,8 @@ export const Filters = () => {
             <Icon
               className="icon"
               name="van"
-              stroke="currentColor"
-              fill="none"
+              stroke="transparent"
+              fill="#101828"
               width="40"
               height="28"
             />
@@ -92,8 +92,8 @@ export const Filters = () => {
             <Icon
               className="icon"
               name="fully-integrated-van"
-              stroke="currentColor"
-              fill="none"
+              stroke="transparent"
+              fill="#101828"
               width="40"
               height="28"
             />
@@ -104,8 +104,8 @@ export const Filters = () => {
             <Icon
               className="icon"
               name="alcove"
-              stroke="currentColor"
-              fill="none"
+              stroke="transparent"
+              fill="#101828"
               width="40"
               height="28"
             />

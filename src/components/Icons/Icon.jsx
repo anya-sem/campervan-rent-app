@@ -1,7 +1,7 @@
 export const Icon = ({
   name,
-  width,
-  height,
+  width = 32,
+  height = 32,
   fill,
   stroke,
   strokeWidth,
