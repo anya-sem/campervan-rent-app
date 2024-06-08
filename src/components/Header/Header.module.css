@@ -1,0 +1,44 @@
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.logo {
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 1.5;
+  text-transform: uppercase;
+}
+.buttons {
+  display: flex;
+  flex-direction: row;
+  gap: 32px;
+}
+.catalogBtn {
+  padding: 16px 40px;
+  background-color: var(--color-red);
+  border-radius: 200px;
+  transition: var(--transition);
+
+  color: var(--color-white);
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.5;
+  letter-spacing: -0.08px;
+}
+.catalogBtn:hover {
+  background: var(--color-darkred);
+}
+.favoriteBtn {
+  padding: 16px;
+}
+.favoriteBtn svg {
+  fill: none;
+  transition: fill var(--transition);
+}
+.favoriteBtn:hover svg {
+  fill: var(--color-darkblue);
+}
+.active svg {
+  fill: var(--color-darkblue);
+}
