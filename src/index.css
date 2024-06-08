@@ -63,3 +63,19 @@ button {
   cursor: pointer;
   border: none;
 }
+
+::-webkit-scrollbar {
+  display: none;
+}
+body {
+  scrollbar-width: none;
+}
+.wrapper {
+  -ms-overflow-style: none;
+  overflow: hidden;
+}
+html,
+body,
+.wrapper {
+  overflow: hidden;
+}
