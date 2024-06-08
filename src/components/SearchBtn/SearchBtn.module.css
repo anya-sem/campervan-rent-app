@@ -6,6 +6,7 @@
 
   border-radius: 200px;
   background: var(--color-red);
+  transition: var(--transition);
 
   color: var(--color-white);
   font-size: 16px;
@@ -14,4 +15,5 @@
   letter-spacing: -0.08px;
 }
 .button:hover {
+  background: var(--color-darkred);
 }
