@@ -1,1 +1,0 @@
-import{j as e,H as r}from"./index-e9e009bd.js";import{C as t}from"./Container-aa5f4e65.js";function i(){return e.jsxs(t,{children:[e.jsx(r,{children:e.jsx("title",{children:"Home"})}),e.jsx("h1",{children:"Home page"})]})}export{i as default};
