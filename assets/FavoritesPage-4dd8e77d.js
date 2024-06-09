@@ -1,1 +1,0 @@
-import{u as r,j as e,C as t,H as a}from"./index-80eb81db.js";import{s as o,L as i}from"./Loader-df8428c7.js";function c(){const s=r(o);return e.jsxs(t,{children:[e.jsx(a,{children:e.jsx("title",{children:"Favorites"})}),e.jsx("h1",{children:"Favorites"}),s&&e.jsx(i,{})]})}export{c as default};
