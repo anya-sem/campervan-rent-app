@@ -37,7 +37,8 @@ body {
   font-style: normal;
   color: var(--color-darkblue);
   margin: 0;
-  scrollbar-width: none;
+
+  overflow: hidden; /* Приховує дефолтний скролбар */
 }
 h1,
 h2,
