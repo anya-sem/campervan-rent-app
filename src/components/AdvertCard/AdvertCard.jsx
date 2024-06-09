@@ -1,12 +1,28 @@
 import { Icon } from '../Icons/Icon';
 
-export const CarCard = () => {
+export const AdvertCard = ({ advert }) => {
+  const {
+    gallery,
+    name,
+    price,
+    rating,
+    reviews,
+    location,
+    description,
+    adults,
+    transmission,
+    engine,
+    details,
+  } = advert;
+
+  const firstImage = gallery && gallery.length > 0 ? gallery[0] : '';
+
   return (
-    <div>
-      <img src="" alt="" />
-      <h2>name</h2>
+    <li>
+      <img src={firstImage} alt={name} />
+      <h2>{name}</h2>
       <div>
-        <p>price</p>
+        <p>{price}</p>
         <Icon
           name="heart"
           fill="none"
@@ -24,7 +40,9 @@ export const CarCard = () => {
             width="16"
             height="16"
           />
-          <p>rating(reviews)</p>
+          <p>
+            {rating}({reviews.length} Reviews)
+          </p>
         </div>
         <div>
           <Icon
@@ -34,31 +52,31 @@ export const CarCard = () => {
             width="16"
             height="16"
           />
-          <p>location</p>
+          <p>{location}</p>
         </div>
       </div>
-      <p>description</p>
+      <p>{description}</p>
       <div>
         <div>
-          <p>adults</p>
+          <p>{adults}</p>
         </div>
         <div>
-          <p>transmission</p>
+          <p>{transmission}</p>
         </div>
         <div>
-          <p>engine</p>
+          <p>{engine}</p>
         </div>
         <div>
-          <p>details.kitchen</p>
+          <p>{details.kitchen}</p>
         </div>
         <div>
-          <p>details.bed</p>
+          <p>{details.bed}</p>
         </div>
         <div>
-          <p>details.airConditioner</p>
+          <p>{details.airConditioner}</p>
         </div>
       </div>
       <button type="button">Show more</button>
-    </div>
+    </li>
   );
 };
