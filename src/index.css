@@ -37,8 +37,6 @@ body {
   font-style: normal;
   color: var(--color-darkblue);
   margin: 0;
-
-  overflow: hidden; /* Приховує дефолтний скролбар */
 }
 h1,
 h2,
@@ -64,4 +62,19 @@ img {
 button {
   cursor: pointer;
   border: none;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background-color: var(--color-gray);
+  border-radius: 4px;
+  transition: var(--transition);
+}
+::-webkit-scrollbar-thumb:hover {
+  background-color: var(--color-red);
 }
