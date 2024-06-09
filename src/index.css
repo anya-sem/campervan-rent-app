@@ -37,6 +37,7 @@ body {
   font-style: normal;
   color: var(--color-darkblue);
   margin: 0;
+  scrollbar-width: none;
 }
 h1,
 h2,
@@ -62,20 +63,4 @@ img {
 button {
   cursor: pointer;
   border: none;
-}
-
-::-webkit-scrollbar {
-  display: none;
-}
-body {
-  scrollbar-width: none;
-}
-.wrapper {
-  -ms-overflow-style: none;
-  overflow: hidden;
-}
-html,
-body,
-.wrapper {
-  overflow: hidden;
 }

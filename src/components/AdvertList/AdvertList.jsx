@@ -6,6 +6,7 @@ import { loadMoreAdverts } from '../../redux/advertsSlice';
 import { AdvertCard } from '../AdvertCard/AdvertCard';
 import { LoadMoreBtn } from '../LoadMoreBtn/LoadMoreBtn';
 import Loader from '../Loader/Loader';
+import css from './AdvertList.module.css';
 
 export const AdvertList = () => {
   const dispatch = useDispatch();
@@ -23,7 +24,7 @@ export const AdvertList = () => {
 
   return (
     <div>
-      <ul>
+      <ul className={css.wrapper}>
         {adverts.slice(0, loadedCount).map((advert) => {
           return <AdvertCard key={advert._id} advert={advert} />;
         })}

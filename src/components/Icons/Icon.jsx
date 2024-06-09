@@ -18,13 +18,11 @@ export const Icon = ({
         width={width}
         height={height}
         fill={fill}
+        stroke={stroke}
+        strokeWidth={strokeWidth}
         aria-hidden="true"
       >
-        <use
-          xlinkHref={`${path}sprite.svg#icon-${name}`}
-          stroke={stroke}
-          strokeWidth={strokeWidth}
-        />
+        <use xlinkHref={`${path}sprite.svg#icon-${name}`} />
       </svg>
     </>
   );
