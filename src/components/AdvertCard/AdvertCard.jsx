@@ -3,6 +3,8 @@ import { useDispatch, useSelector } from 'react-redux';
 import { addFavorite, deleteFavorite } from '../../redux/operations';
 import { isFavorite, selectFavorites } from '../../redux/selectors';
 import { Icon } from '../Icons/Icon';
+import { BaseModal } from '../BaseModal/BaseModal';
+import DetailsModal from '../DetailsModal/DetailsModal';
 import css from './AdvertCard.module.css';
 
 export const AdvertCard = ({ advert }) => {
@@ -11,6 +13,7 @@ export const AdvertCard = ({ advert }) => {
   const [isHeartActive, setIsHeartActive] = useState(
     isFavorite(favorites, advert._id)
   );
+  const [isOpen, setIsOpen] = useState(false);
 
   const handleHeartClick = () => {
     if (isHeartActive) {
@@ -24,6 +27,13 @@ export const AdvertCard = ({ advert }) => {
   useEffect(() => {
     setIsHeartActive(isFavorite(favorites, advert._id));
   }, [favorites, advert._id]);
+
+  const openModal = () => {
+    setIsOpen(true);
+  };
+  const closeModal = () => {
+    setIsOpen(false);
+  };
 
   const {
     gallery,
@@ -160,10 +170,13 @@ export const AdvertCard = ({ advert }) => {
             <p>{ac}</p>
           </div>
         </div>
-        <button className={css.button} type="button">
+        <button className={css.button} type="button" onClick={openModal}>
           Show more
         </button>
       </div>
+      <BaseModal isOpen={isOpen} onClose={closeModal}>
+        <DetailsModal onClose={closeModal} advert={advert} />
+      </BaseModal>
     </li>
   );
 };

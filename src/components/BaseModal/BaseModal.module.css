@@ -1,0 +1,36 @@
+.modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  right: auto;
+  bottom: auto;
+  margin-right: -50%;
+  transform: translate(-50%, -50%);
+  background: white;
+  border-radius: 20px;
+  padding: 40px;
+  overflow: auto;
+  outline: none;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(17, 18, 19, 0.4);
+  z-index: 1000;
+}
+
+.closeButton {
+  background: transparent;
+  position: absolute;
+  top: 40px;
+  right: 40px;
+  transition: var(--transition);
+}
+
+.closeButton:hover {
+  color: var(--color-red);
+}

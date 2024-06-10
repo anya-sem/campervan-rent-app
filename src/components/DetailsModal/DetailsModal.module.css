@@ -1,0 +1,51 @@
+.title {
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 1.25;
+  margin-bottom: 10px;
+}
+
+.infoWrapper {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+.infoSubwrapper {
+  display: flex;
+  gap: 4px;
+}
+.reviews {
+  text-decoration: underline;
+}
+.price {
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 1.25;
+  margin-bottom: 24px;
+}
+.imgWrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+.img {
+  max-width: 290px;
+  height: 310px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+.text {
+  margin-bottom: 44px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  color: var(--color-gray);
+
+  font-size: 16px;
+  line-height: 1.5;
+}
+.text {
+  width: 902px;
+}
