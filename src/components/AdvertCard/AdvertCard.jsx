@@ -1,8 +1,30 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { addFavorite, deleteFavorite } from '../../redux/operations';
+import { isFavorite, selectFavorites } from '../../redux/selectors';
 import { Icon } from '../Icons/Icon';
 import css from './AdvertCard.module.css';
 
 export const AdvertCard = ({ advert }) => {
+  const dispatch = useDispatch();
+  const favorites = useSelector(selectFavorites);
+  const [isHeartActive, setIsHeartActive] = useState(
+    isFavorite(favorites, advert._id)
+  );
+
+  const handleHeartClick = () => {
+    if (isHeartActive) {
+      dispatch(deleteFavorite(advert._id));
+    } else {
+      dispatch(addFavorite(advert));
+    }
+    setIsHeartActive(!isHeartActive);
+  };
+
+  useEffect(() => {
+    setIsHeartActive(isFavorite(favorites, advert._id));
+  }, [favorites, advert._id]);
+
   const {
     gallery,
     name,
@@ -16,12 +38,6 @@ export const AdvertCard = ({ advert }) => {
     engine,
     details,
   } = advert;
-
-  const [isHeartActive, setHeartActive] = useState(false);
-
-  const handleHeartClick = () => {
-    setHeartActive(!isHeartActive);
-  };
 
   const firstImage = gallery && gallery.length > 0 ? gallery[0] : '';
 
@@ -38,12 +54,12 @@ export const AdvertCard = ({ advert }) => {
             <p className={css.titleElement}>€{price.toFixed(2)}</p>
 
             <button
-              className={`${css.icon} ${isHeartActive ? 'active' : ''}`}
+              className={`${css.icon} ${isHeartActive ? css.active : ''}`}
               onClick={handleHeartClick}
             >
               <Icon
                 name={isHeartActive ? 'heart-pressed' : 'heart'}
-                fill="none"
+                fill={isHeartActive ? 'red' : 'none'}
                 stroke="currentColor"
                 width="24"
                 height="24"

@@ -2,16 +2,14 @@ import { createSlice } from '@reduxjs/toolkit';
 import { fetchAdverts } from './operations';
 import toast from 'react-hot-toast';
 
-const initialState = {
-  items: [],
-  loading: false,
-  error: null,
-  visibleCount: 4,
-};
-
 const advertsSlice = createSlice({
   name: 'adverts',
-  initialState,
+  initialState: {
+    items: [],
+    loading: false,
+    error: null,
+    visibleCount: 4,
+  },
   reducers: {
     loadMoreAdverts(state) {
       state.visibleCount += 4;
