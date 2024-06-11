@@ -59,39 +59,39 @@ const DetailsModal = ({ advert }) => {
           <img className={css.img} src={thirdImage} alt={name} />
         </div>
         <p className={css.text}>{description}...</p>
-      </div>
-      <div>
-        <div className={css.tabWrapper}>
-          <button
-            className={`${css.tab} ${
-              activeTab === 'features' ? css.active : ''
-            }`}
-            onClick={() => handleTabChange('features')}
-          >
-            Features
-          </button>
-          <button
-            className={`${css.tab} ${
-              activeTab === 'reviews' ? css.active : ''
-            }`}
-            onClick={() => handleTabChange('reviews')}
-          >
-            Reviews
-          </button>
+        <div>
+          <div className={css.tabWrapper}>
+            <button
+              className={`${css.tab} ${
+                activeTab === 'features' ? css.active : ''
+              }`}
+              onClick={() => handleTabChange('features')}
+            >
+              Features
+            </button>
+            <button
+              className={`${css.tab} ${
+                activeTab === 'reviews' ? css.active : ''
+              }`}
+              onClick={() => handleTabChange('reviews')}
+            >
+              Reviews
+            </button>
+          </div>
+
+          {activeTab === 'features' && (
+            <div>
+              <Features advert={advert} showAdditionalFeatures={true} />
+              <VehicleDetails advert={advert} />
+            </div>
+          )}
+
+          {activeTab === 'reviews' && (
+            <div>
+              <p>Reviews</p>
+            </div>
+          )}
         </div>
-
-        {activeTab === 'features' && (
-          <div>
-            <Features advert={advert} showAdditionalFeatures={true} />
-            <VehicleDetails advert={advert} />
-          </div>
-        )}
-
-        {activeTab === 'reviews' && (
-          <div>
-            <p>Reviews</p>
-          </div>
-        )}
       </div>
     </div>
   );
