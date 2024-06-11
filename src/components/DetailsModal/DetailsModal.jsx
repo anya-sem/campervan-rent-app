@@ -1,7 +1,8 @@
 import { useState } from 'react';
 import { Icon } from '../Icons/Icon';
-import css from './DetailsModal.module.css';
 import { Features } from '../Features/Features';
+import { VehicleDetails } from '../VehicleDetails/VehicleDetails';
+import css from './DetailsModal.module.css';
 
 const DetailsModal = ({ advert }) => {
   const [activeTab, setActiveTab] = useState('features');
@@ -67,7 +68,8 @@ const DetailsModal = ({ advert }) => {
 
         {activeTab === 'features' && (
           <div>
-            <Features advert={advert} />
+            <Features advert={advert} showAdditionalFeatures={true} />
+            <VehicleDetails advert={advert} />
           </div>
         )}
 

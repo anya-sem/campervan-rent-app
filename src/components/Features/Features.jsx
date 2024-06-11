@@ -1,7 +1,7 @@
 import { Icon } from '../Icons/Icon';
 import css from './Features.module.css';
 
-export const Features = ({ advert }) => {
+export const Features = ({ advert, showAdditionalFeatures }) => {
   const { adults, transmission, engine, details } = advert;
 
   return (
@@ -68,6 +68,60 @@ export const Features = ({ advert }) => {
         />
         <p>{details.airConditioner ? 'AC' : null}</p>
       </div>
+      {showAdditionalFeatures && (
+        <>
+          <div className={css.feature}>
+            <Icon
+              name="tv"
+              stroke="currentColor"
+              fill="none"
+              width="20"
+              height="20"
+            />
+            <p>{details.TV ? 'TV' : null}</p>
+          </div>
+          <div className={css.feature}>
+            <Icon
+              name="radio"
+              stroke="currentColor"
+              fill="none"
+              width="20"
+              height="20"
+            />
+            <p>{details.radio ? 'Radio' : null}</p>
+          </div>
+          <div className={css.feature}>
+            <Icon
+              name="hob"
+              stroke="transparent"
+              fill="#101828"
+              width="20"
+              height="20"
+            />
+            <p>{details.hob ? 'Hob' : null}</p>
+          </div>
+          <div className={css.feature}>
+            <Icon
+              name="gas"
+              stroke="transparent"
+              fill="#101828"
+              width="20"
+              height="20"
+            />
+            <p>{details.gas ? 'Gas' : null}</p>
+          </div>
+          <div className={css.feature}>
+            <Icon
+              name="water"
+              stroke="currentColor"
+              fill="none"
+              width="20"
+              height="20"
+            />
+            <p>{details.water ? 'Water' : null}</p>
+          </div>
+        </>
+      )}
     </div>
   );
 };

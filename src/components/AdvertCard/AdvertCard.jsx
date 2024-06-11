@@ -100,7 +100,7 @@ export const AdvertCard = ({ advert }) => {
           </div>
         </div>
         <p className={css.text}>{description}...</p>
-        <Features advert={advert} />
+        <Features advert={advert} showAdditionalFeatures={false} />
         <button className={css.button} type="button" onClick={openModal}>
           Show more
         </button>
