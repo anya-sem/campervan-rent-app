@@ -36,90 +36,106 @@ export const Features = ({ advert, showAdditionalFeatures }) => {
         />
         <p>{engine.charAt(0).toUpperCase() + engine.slice(1)}</p>
       </div>
-      <div className={css.feature}>
-        <Icon
-          name="kitchen-tools"
-          fill="none"
-          stroke="currentColor"
-          width="20"
-          height="20"
-        />
-        <p>{details.kitchen ? 'Kitchen' : null}</p>
-      </div>
-      <div className={css.feature}>
-        <Icon
-          name="bed"
-          fill="none"
-          stroke="currentColor"
-          width="20"
-          height="20"
-        />
-        <p>
-          {details.beds > 1 ? `${details.beds} beds` : `${details.beds} bed`}
-        </p>
-      </div>
-      <div className={css.feature}>
-        <Icon
-          name="air"
-          stroke="transparent"
-          fill="#101828"
-          width="20"
-          height="20"
-        />
-        <p>{details.airConditioner ? 'AC' : null}</p>
-      </div>
+      {details.kitchen !== 0 && (
+        <div className={css.feature}>
+          <Icon
+            name="kitchen-tools"
+            fill="none"
+            stroke="currentColor"
+            width="20"
+            height="20"
+          />
+          <p>Kitchen</p>
+        </div>
+      )}
+      {details.beds !== 0 && (
+        <div className={css.feature}>
+          <Icon
+            name="bed"
+            fill="none"
+            stroke="currentColor"
+            width="20"
+            height="20"
+          />
+          <p>
+            {details.beds > 1 ? `${details.beds} beds` : `${details.beds} bed`}
+          </p>
+        </div>
+      )}
+      {details.airConditioner !== 0 && (
+        <div className={css.feature}>
+          <Icon
+            name="air"
+            stroke="transparent"
+            fill="#101828"
+            width="20"
+            height="20"
+          />
+          <p>AC</p>
+        </div>
+      )}
       {showAdditionalFeatures && (
         <>
-          <div className={css.feature}>
-            <Icon
-              name="tv"
-              stroke="currentColor"
-              fill="none"
-              width="20"
-              height="20"
-            />
-            <p>{details.TV ? 'TV' : null}</p>
-          </div>
-          <div className={css.feature}>
-            <Icon
-              name="radio"
-              stroke="currentColor"
-              fill="none"
-              width="20"
-              height="20"
-            />
-            <p>{details.radio ? 'Radio' : null}</p>
-          </div>
-          <div className={css.feature}>
-            <Icon
-              name="hob"
-              stroke="transparent"
-              fill="#101828"
-              width="20"
-              height="20"
-            />
-            <p>{details.hob ? 'Hob' : null}</p>
-          </div>
-          <div className={css.feature}>
-            <Icon
-              name="gas"
-              stroke="transparent"
-              fill="#101828"
-              width="20"
-              height="20"
-            />
-            <p>{details.gas ? 'Gas' : null}</p>
-          </div>
-          <div className={css.feature}>
-            <Icon
-              name="water"
-              stroke="currentColor"
-              fill="none"
-              width="20"
-              height="20"
-            />
-            <p>{details.water ? 'Water' : null}</p>
-          </div>
+          {details.TV !== 0 && (
+            <div className={css.feature}>
+              <Icon
+                name="tv"
+                stroke="currentColor"
+                fill="none"
+                width="20"
+                height="20"
+              />
+              <p>TV</p>
+            </div>
+          )}
+          {details.radio !== 0 && (
+            <div className={css.feature}>
+              <Icon
+                name="radio"
+                stroke="currentColor"
+                fill="none"
+                width="20"
+                height="20"
+              />
+              <p>Radio</p>
+            </div>
+          )}
+          {details.hob !== 0 && (
+            <div className={css.feature}>
+              <Icon
+                name="hob"
+                stroke="transparent"
+                fill="#101828"
+                width="20"
+                height="20"
+              />
+              <p>Hob</p>
+            </div>
+          )}
+          {details.gas !== 0 && (
+            <div className={css.feature}>
+              <Icon
+                name="gas"
+                stroke="transparent"
+                fill="#101828"
+                width="20"
+                height="20"
+              />
+              <p>Gas</p>
+            </div>
+          )}
+          {details.water !== 0 && (
+            <div className={css.feature}>
+              <Icon
+                name="water"
+                stroke="currentColor"
+                fill="none"
+                width="20"
+                height="20"
+              />
+              <p>Water</p>
+            </div>
+          )}
         </>
       )}
     </div>
