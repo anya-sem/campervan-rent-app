@@ -1,8 +1,9 @@
 import { useState } from 'react';
 import { Icon } from '../Icons/Icon';
 import css from './DetailsModal.module.css';
+import { Features } from '../Features/Features';
 
-const DetailsModal = ({ advert = {} }) => {
+const DetailsModal = ({ advert }) => {
   const [activeTab, setActiveTab] = useState('features');
   const handleTabChange = (tab) => {
     setActiveTab(tab);
@@ -16,10 +17,6 @@ const DetailsModal = ({ advert = {} }) => {
     reviews,
     location,
     description,
-    adults,
-    transmission,
-    engine,
-    details,
   } = advert;
 
   const firstImage = gallery && gallery.length > 0 ? gallery[0] : '';
@@ -70,7 +67,7 @@ const DetailsModal = ({ advert = {} }) => {
 
         {activeTab === 'features' && (
           <div>
-            <p>Features</p>
+            <Features advert={advert} />
           </div>
         )}
 

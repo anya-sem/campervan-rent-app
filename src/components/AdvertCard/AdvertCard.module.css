@@ -71,24 +71,6 @@
   font-size: 16px;
   line-height: 1.5;
 }
-.featuresWrapper {
-  margin-bottom: 24px;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-}
-.feature {
-  display: flex;
-  padding: 12px 18px;
-  align-items: center;
-  gap: 8px;
-  border-radius: 100px;
-  background: var(--color-lightgray);
-
-  font-size: 16px;
-  font-weight: 500;
-  line-height: 1.25;
-}
 .button {
   padding: 16px 40px;
   border-radius: 200px;

@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { addFavorite, deleteFavorite } from '../../redux/operations';
 import { isFavorite, selectFavorites } from '../../redux/selectors';
 import { Icon } from '../Icons/Icon';
+import { Features } from '../Features/Features';
 import { BaseModal } from '../BaseModal/BaseModal';
 import DetailsModal from '../DetailsModal/DetailsModal';
 import css from './AdvertCard.module.css';
@@ -50,9 +51,6 @@ export const AdvertCard = ({ advert }) => {
   } = advert;
 
   const firstImage = gallery && gallery.length > 0 ? gallery[0] : '';
-
-  const kitchen = details.kitchen ? 'Kitchen' : null;
-  const ac = details.airConditioner ? 'AC' : null;
 
   return (
     <li className={css.wrapper}>
@@ -102,74 +100,7 @@ export const AdvertCard = ({ advert }) => {
           </div>
         </div>
         <p className={css.text}>{description}...</p>
-        <div className={css.featuresWrapper}>
-          <div className={css.feature}>
-            <Icon
-              name="people"
-              stroke="transparent"
-              fill="#101828"
-              width="20"
-              height="20"
-            />
-            <p>{adults > 1 ? `${adults} adults` : `${adults} adult`}</p>
-          </div>
-          <div className={css.feature}>
-            <Icon
-              name="gear"
-              fill="none"
-              stroke="currentColor"
-              width="20"
-              height="20"
-            />
-            <p>
-              {transmission.charAt(0).toUpperCase() + transmission.slice(1)}
-            </p>
-          </div>
-          <div className={css.feature}>
-            <Icon
-              name="petrol"
-              stroke="transparent"
-              fill="#101828"
-              width="20"
-              height="20"
-            />
-            <p>{engine.charAt(0).toUpperCase() + engine.slice(1)}</p>
-          </div>
-          <div className={css.feature}>
-            <Icon
-              name="kitchen-tools"
-              fill="none"
-              stroke="currentColor"
-              width="20"
-              height="20"
-            />
-            <p>{kitchen}</p>
-          </div>
-          <div className={css.feature}>
-            <Icon
-              name="bed"
-              fill="none"
-              stroke="currentColor"
-              width="20"
-              height="20"
-            />
-            <p>
-              {details.beds > 1
-                ? `${details.beds} beds`
-                : `${details.beds} bed`}
-            </p>
-          </div>
-          <div className={css.feature}>
-            <Icon
-              name="air"
-              stroke="transparent"
-              fill="#101828"
-              width="20"
-              height="20"
-            />
-            <p>{ac}</p>
-          </div>
-        </div>
+        <Features advert={advert} />
         <button className={css.button} type="button" onClick={openModal}>
           Show more
         </button>

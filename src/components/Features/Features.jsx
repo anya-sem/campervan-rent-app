@@ -1,0 +1,73 @@
+import { Icon } from '../Icons/Icon';
+import css from './Features.module.css';
+
+export const Features = ({ advert }) => {
+  const { adults, transmission, engine, details } = advert;
+
+  return (
+    <div className={css.wrapper}>
+      <div className={css.feature}>
+        <Icon
+          name="people"
+          stroke="transparent"
+          fill="#101828"
+          width="20"
+          height="20"
+        />
+        <p>{adults > 1 ? `${adults} adults` : `${adults} adult`}</p>
+      </div>
+      <div className={css.feature}>
+        <Icon
+          name="gear"
+          fill="none"
+          stroke="currentColor"
+          width="20"
+          height="20"
+        />
+        <p>{transmission.charAt(0).toUpperCase() + transmission.slice(1)}</p>
+      </div>
+      <div className={css.feature}>
+        <Icon
+          name="petrol"
+          stroke="transparent"
+          fill="#101828"
+          width="20"
+          height="20"
+        />
+        <p>{engine.charAt(0).toUpperCase() + engine.slice(1)}</p>
+      </div>
+      <div className={css.feature}>
+        <Icon
+          name="kitchen-tools"
+          fill="none"
+          stroke="currentColor"
+          width="20"
+          height="20"
+        />
+        <p>{details.kitchen ? 'Kitchen' : null}</p>
+      </div>
+      <div className={css.feature}>
+        <Icon
+          name="bed"
+          fill="none"
+          stroke="currentColor"
+          width="20"
+          height="20"
+        />
+        <p>
+          {details.beds > 1 ? `${details.beds} beds` : `${details.beds} bed`}
+        </p>
+      </div>
+      <div className={css.feature}>
+        <Icon
+          name="air"
+          stroke="transparent"
+          fill="#101828"
+          width="20"
+          height="20"
+        />
+        <p>{details.airConditioner ? 'AC' : null}</p>
+      </div>
+    </div>
+  );
+};
