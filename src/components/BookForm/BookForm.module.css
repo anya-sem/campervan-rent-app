@@ -4,15 +4,20 @@
   flex-direction: column;
   align-items: flex-start;
   gap: 24px;
+  height: 100%;
 
   border-radius: 10px;
   border: 1px solid rgba(16, 24, 40, 0.2);
+}
+.titleWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
 }
 .title {
   font-size: 20px;
   font-weight: 600;
   line-height: 1.2;
-  margin-bottom: 8px;
 }
 .text {
   color: var(--color-gray);
@@ -53,15 +58,19 @@
 }
 .button {
   padding: 16px 60px;
-  background: var(--color-red);
-  border-radius: 200px;
+  margin-top: 10px;
   max-width: 160px;
 
+  border-radius: 200px;
+  background: var(--color-red);
+  transition: var(--transition);
+
   color: var(--color-white);
-  font-family: Inter;
   font-size: 16px;
-  font-style: normal;
   font-weight: 500;
   line-height: 1.5;
   letter-spacing: -0.08px;
+}
+.button:hover {
+  background: var(--color-darkred);
 }

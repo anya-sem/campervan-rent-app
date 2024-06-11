@@ -35,7 +35,7 @@ export default function BookForm() {
 
   return (
     <div className={css.wrapper}>
-      <div>
+      <div className={css.titleWrapper}>
         <strong className={css.title}>Book your campervan now</strong>
         <p className={css.text}>
           Stay connected! We are always ready to help you.
@@ -78,10 +78,9 @@ export default function BookForm() {
             id={commentFieldId}
             placeholder="Comment"
             component="textarea"
-            rows="4"
+            rows="3"
           />
           <ErrorMessage className={css.error} name="comment" component="span" />
-
           <button className={css.button} type="submit">
             Send
           </button>

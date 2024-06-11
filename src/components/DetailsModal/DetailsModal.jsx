@@ -4,9 +4,11 @@ import { Features } from '../Features/Features';
 import { VehicleDetails } from '../VehicleDetails/VehicleDetails';
 import BookForm from '../BookForm/BookForm';
 import css from './DetailsModal.module.css';
+import { ReviewIList } from '../ReviewIList/ReviewIList';
 
 const DetailsModal = ({ advert }) => {
   const [activeTab, setActiveTab] = useState('features');
+
   const handleTabChange = (tab) => {
     setActiveTab(tab);
   };
@@ -59,7 +61,9 @@ const DetailsModal = ({ advert }) => {
           <img className={css.img} src={secondImage} alt={name} />
           <img className={css.img} src={thirdImage} alt={name} />
         </div>
-        <p className={css.text}>{description}...</p>
+        <div>
+          <p className={css.text}>{description}</p>
+        </div>
         <div>
           <div className={css.tabWrapper}>
             <button
@@ -79,25 +83,20 @@ const DetailsModal = ({ advert }) => {
               Reviews
             </button>
           </div>
-
-          {activeTab === 'features' && (
-            <div className={css.tabContentWrapper}>
+          <div className={css.tabContentWrapper}>
+            {activeTab === 'features' && (
               <div className={css.textContentWrapper}>
                 <Features advert={advert} showAdditionalFeatures={true} />
                 <VehicleDetails advert={advert} />
               </div>
-              <BookForm />
-            </div>
-          )}
-
-          {activeTab === 'reviews' && (
-            <div className={css.tabContentWrapper}>
+            )}
+            {activeTab === 'reviews' && (
               <div className={css.textContentWrapper}>
-                <p>Reviews</p>
+                <ReviewIList reviews={reviews} />
               </div>
-              <BookForm />
-            </div>
-          )}
+            )}
+            <BookForm />
+          </div>
         </div>
       </div>
     </div>

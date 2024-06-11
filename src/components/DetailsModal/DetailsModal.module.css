@@ -50,9 +50,8 @@
 }
 .text {
   margin-bottom: 20px;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
+
+  white-space: pre-wrap;
   width: 902px;
 
   color: var(--color-gray);
@@ -107,6 +106,7 @@
 }
 .tabContentWrapper {
   display: flex;
+  justify-content: space-between;
   gap: 24px;
 }
 .textContentWrapper {

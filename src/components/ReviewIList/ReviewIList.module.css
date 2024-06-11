@@ -1,0 +1,10 @@
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+.noReviews {
+  color: var(--color-gray);
+  font-size: 16px;
+  line-height: 1.5;
+}
