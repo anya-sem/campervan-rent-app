@@ -61,9 +61,23 @@ const DetailsModal = ({ advert }) => {
         <p className={css.text}>{description}...</p>
       </div>
       <div>
-        <div>
-          <button onClick={() => handleTabChange('features')}>Features</button>
-          <button onClick={() => handleTabChange('reviews')}>Reviews</button>
+        <div className={css.tabWrapper}>
+          <button
+            className={`${css.tab} ${
+              activeTab === 'features' ? css.active : ''
+            }`}
+            onClick={() => handleTabChange('features')}
+          >
+            Features
+          </button>
+          <button
+            className={`${css.tab} ${
+              activeTab === 'reviews' ? css.active : ''
+            }`}
+            onClick={() => handleTabChange('reviews')}
+          >
+            Reviews
+          </button>
         </div>
 
         {activeTab === 'features' && (
