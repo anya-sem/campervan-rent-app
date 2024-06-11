@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { Icon } from '../Icons/Icon';
 import { Features } from '../Features/Features';
 import { VehicleDetails } from '../VehicleDetails/VehicleDetails';
+import BookForm from '../BookForm/BookForm';
 import css from './DetailsModal.module.css';
 
 const DetailsModal = ({ advert }) => {
@@ -80,15 +81,21 @@ const DetailsModal = ({ advert }) => {
           </div>
 
           {activeTab === 'features' && (
-            <div>
-              <Features advert={advert} showAdditionalFeatures={true} />
-              <VehicleDetails advert={advert} />
+            <div className={css.tabContentWrapper}>
+              <div className={css.textContentWrapper}>
+                <Features advert={advert} showAdditionalFeatures={true} />
+                <VehicleDetails advert={advert} />
+              </div>
+              <BookForm />
             </div>
           )}
 
           {activeTab === 'reviews' && (
-            <div>
-              <p>Reviews</p>
+            <div className={css.tabContentWrapper}>
+              <div className={css.textContentWrapper}>
+                <p>Reviews</p>
+              </div>
+              <BookForm />
             </div>
           )}
         </div>

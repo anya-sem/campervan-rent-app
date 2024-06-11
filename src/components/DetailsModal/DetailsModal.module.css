@@ -105,3 +105,10 @@
 .tab.active::after {
   background-color: var(--color-red);
 }
+.tabContentWrapper {
+  display: flex;
+  gap: 24px;
+}
+.textContentWrapper {
+  max-width: 430px;
+}
