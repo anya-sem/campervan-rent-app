@@ -22,7 +22,7 @@ with a mock API for data handling.
 
 1.  Clone the repository
     ```sh
-    git clone: https://github.com/anya-sem/campervan-rent-app
+    git clone https://github.com/anya-sem/campervan-rent-app
     ```
 2.  Install dependencies
     ```sh
