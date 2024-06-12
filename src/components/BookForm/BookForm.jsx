@@ -1,10 +1,9 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Formik, Form, Field, ErrorMessage } from 'formik';
-import { useId } from 'react';
-import * as Yup from 'yup';
 import ReactDatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
 import css from './BookForm.module.css';
+import { Icon } from '../Icons/Icon';
 
 const initialValues = {
   name: '',
@@ -12,26 +11,30 @@ const initialValues = {
   date: '',
   comment: '',
 };
-const validationSchema = Yup.object().shape({
-  name: Yup.string()
-    .min(3, 'Too short!')
-    .max(50, 'Too long!')
-    .required('Required!'),
-  email: Yup.string().email('Invalid email').required('Required!'),
-  comment: Yup.string().max(100, 'Too long!'),
-});
 
 export default function BookForm() {
-  const nameFieldId = useId();
-  const emailFieldId = useId();
-  const commentFieldId = useId();
-
-  const [startDate, setStartDate] = useState(new Date());
+  const [dateValue, setDateValue] = useState(null);
+  const [calendarOpen, setCalendarOpen] = useState(false);
+  const [calendarActive, setCalendarActive] = useState(false);
 
   const handleSubmit = (values) => {
-    values.date = startDate;
+    values.date = dateValue;
     console.log(values);
+    window.location.reload();
   };
+
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (calendarOpen && !event.target.closest(`.${css.dateWrapper}`)) {
+        setCalendarOpen(false);
+        setCalendarActive(!calendarActive);
+      }
+    };
+    document.addEventListener('click', handleClickOutside);
+    return () => {
+      document.removeEventListener('click', handleClickOutside);
+    };
+  }, [calendarOpen]);
 
   return (
     <div className={css.wrapper}>
@@ -41,18 +44,14 @@ export default function BookForm() {
           Stay connected! We are always ready to help you.
         </p>
       </div>
-      <Formik
-        initialValues={initialValues}
-        onSubmit={handleSubmit}
-        validationSchema={validationSchema}
-      >
+      <Formik initialValues={initialValues} onSubmit={handleSubmit}>
         <Form className={css.form}>
           <Field
             className={css.field}
             type="text"
             name="name"
-            id={nameFieldId}
             placeholder="Name"
+            required
           />
           <ErrorMessage className={css.error} name="name" component="span" />
 
@@ -60,22 +59,53 @@ export default function BookForm() {
             className={css.field}
             type="email"
             name="email"
-            id={emailFieldId}
             placeholder="Email"
+            required
           />
           <ErrorMessage className={css.error} name="email" component="span" />
 
-          <ReactDatePicker
-            className={css.field}
-            selected={startDate}
-            onChange={(date) => setStartDate(date)}
-          />
+          <div className={css.dateWrapper}>
+            <ReactDatePicker
+              className={css.field}
+              wrapperClassName={css.datePickerWrapper}
+              selected={dateValue}
+              placeholderText="Booking date"
+              dateFormat="dd/MM/yyyy"
+              required
+              showMonthDropdown
+              showYearDropdown
+              dropdownMode="select"
+              onChange={(date) => setDateValue(date)}
+              open={calendarOpen}
+            />
+            <button
+              className={`${css.calendarBtn} ${
+                calendarActive ? css.active : ''
+              }`}
+              type="button"
+              onClick={() => {
+                setCalendarOpen(!calendarOpen);
+                setCalendarActive(!calendarActive);
+              }}
+            >
+              <Icon
+                name="calendar"
+                fill="none"
+                stroke="currentColor"
+                color={
+                  calendarActive ? 'var(--color-red)' : 'var(--color-darkblue)'
+                }
+                width="20"
+                height="20"
+              />
+            </button>
+          </div>
+          <ErrorMessage className={css.error} name="date" component="span" />
 
           <Field
-            className={`${css.field} ${css.textarea}`}
+            className={css.field}
             type="text"
             name="comment"
-            id={commentFieldId}
             placeholder="Comment"
             component="textarea"
             rows="3"

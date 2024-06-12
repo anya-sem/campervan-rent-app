@@ -32,6 +32,7 @@
 }
 .field {
   width: 100%;
+  resize: none;
 
   padding: 18px;
   border: none;
@@ -46,15 +47,39 @@
   font-size: 16px;
   line-height: 1.25;
 }
-.textarea {
-  resize: none;
-}
 .error {
   position: relative;
 
   text-align: left;
   font-size: 16px;
   color: var(--color-gray);
+}
+.dateWrapper {
+  position: relative;
+}
+.datePickerWrapper {
+  width: 100%;
+}
+.calendarBtn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 1px;
+  padding: 18px;
+
+  display: flex;
+  justify-content: center;
+
+  background-color: transparent;
+}
+.calendarBtn svg {
+  transition: var(--transition);
+}
+.calendarBtn:hover svg {
+  color: var(--color-red);
+}
+.calendarBtn.active svg {
+  color: var(--color-red);
 }
 .button {
   padding: 16px 60px;
