@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import ReactDatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
-import css from './BookForm.module.css';
+import css from './BookingForm.module.css';
 import { Icon } from '../Icons/Icon';
 
 const initialValues = {
@@ -72,6 +72,7 @@ export default function BookForm() {
               placeholderText="Booking date"
               dateFormat="dd/MM/yyyy"
               required
+              disabled
               showMonthDropdown
               showYearDropdown
               dropdownMode="select"

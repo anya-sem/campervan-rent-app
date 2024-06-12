@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { Icon } from '../Icons/Icon';
 import { Features } from '../Features/Features';
 import { VehicleDetails } from '../VehicleDetails/VehicleDetails';
-import BookForm from '../BookForm/BookForm';
+import BookForm from '../BookingForm/BookingForm';
 import css from './DetailsModal.module.css';
 import { ReviewIList } from '../ReviewIList/ReviewIList';
 
