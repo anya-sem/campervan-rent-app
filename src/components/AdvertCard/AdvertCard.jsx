@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { addFavorite, deleteFavorite } from '../../redux/operations';
+// import { addFavorite, deleteFavorite } from '../../redux/operations';
 import { isFavorite, selectFavorites } from '../../redux/selectors';
 import { Icon } from '../Icons/Icon';
 import { Features } from '../Features/Features';
@@ -16,14 +16,14 @@ export const AdvertCard = ({ advert }) => {
   );
   const [isOpen, setIsOpen] = useState(false);
 
-  const handleHeartClick = () => {
-    if (isHeartActive) {
-      dispatch(deleteFavorite(advert._id));
-    } else {
-      dispatch(addFavorite(advert));
-    }
-    setIsHeartActive(!isHeartActive);
-  };
+  // const handleHeartClick = () => {
+  //   if (isHeartActive) {
+  //     dispatch(deleteFavorite(advert._id));
+  //   } else {
+  //     dispatch(addFavorite(advert));
+  //   }
+  //   setIsHeartActive(!isHeartActive);
+  // };
 
   useEffect(() => {
     setIsHeartActive(isFavorite(favorites, advert._id));
@@ -36,19 +36,8 @@ export const AdvertCard = ({ advert }) => {
     setIsOpen(false);
   };
 
-  const {
-    gallery,
-    name,
-    price,
-    rating,
-    reviews,
-    location,
-    description,
-    adults,
-    transmission,
-    engine,
-    details,
-  } = advert;
+  const { gallery, name, price, rating, reviews, location, description } =
+    advert;
 
   const firstImage = gallery && gallery.length > 0 ? gallery[0] : '';
 
@@ -63,7 +52,7 @@ export const AdvertCard = ({ advert }) => {
 
             <button
               className={`${css.icon} ${isHeartActive ? css.active : ''}`}
-              onClick={handleHeartClick}
+              // onClick={handleHeartClick}
             >
               <Icon
                 name={isHeartActive ? 'heart-pressed' : 'heart'}

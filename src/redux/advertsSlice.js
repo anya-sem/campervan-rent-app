@@ -6,14 +6,18 @@ const advertsSlice = createSlice({
   name: 'adverts',
   initialState: {
     items: [],
+    favorites: [],
     loading: false,
     error: null,
-    visibleCount: 4,
+    // visibleCount: 4,
   },
   reducers: {
-    loadMoreAdverts(state) {
-      state.visibleCount += 4;
-    },
+    // loadMoreAdverts(state) {
+    //   state.visibleCount += 4;
+    //   if (state.visibleCount >= state.items.length) {
+    //     state.hasMore = false;
+    //   }
+    // },
   },
   extraReducers: (builder) => {
     builder
