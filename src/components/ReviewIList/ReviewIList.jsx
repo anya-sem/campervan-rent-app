@@ -14,7 +14,7 @@ export const ReviewIList = ({ reviews }) => {
           ))}
         </ul>
       ) : (
-        <p className={css.noReviews}>No reviews yet.</p>
+        <p className={css.noReviews}>No reviews yet</p>
       )}
     </div>
   );

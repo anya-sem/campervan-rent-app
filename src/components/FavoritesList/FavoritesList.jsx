@@ -7,12 +7,17 @@ export default function FavoritesList() {
   const favorites = useSelector(selectFavorites);
 
   return (
-    <>
-      <ul className={css.list}>
-        {favorites.map((advert) => (
-          <AdvertCard key={advert._id} advert={advert} />
-        ))}
-      </ul>
-    </>
+    <div className={css.wrapper}>
+      <h1 className={css.title}>Favorites</h1>
+      {favorites.length > 0 ? (
+        <ul className={css.list}>
+          {favorites.map((advert) => (
+            <AdvertCard key={advert._id} advert={advert} />
+          ))}
+        </ul>
+      ) : (
+        <p className={css.text}>No favorites yet</p>
+      )}
+    </div>
   );
 }
